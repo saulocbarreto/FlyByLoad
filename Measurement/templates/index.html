@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="static/js/application.js"></script>    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/styles.css') }}" />
+   
+  </head>
+<body>
+  
+  <div id = "title">
+    <h1>Fly-by-Load Panel</h1>
+  </div>
+  
+
+  <div class="cards">
+
+    <div class="card" id="heartrate">
+     <h2 class="sensortitle"> Heart Rate<br>(BPM)</h3>        
+     <h4 id="value1">0</h2>
+    </div>  
+   
+    <div class="card skinconduc">
+      <h2 class="sensortitle">Skin Conductance<br>(µs)</h3>        
+      <h4 id="value2">0</h2>
+    </div> 
+      
+    <div class="card skintemp">
+      <h2 class="sensortitle">Skin Temperature<br >(°C)</h3>        
+      <h4 id="value3">0</h2>
+    </div>  
+    <br>
+  </div> 
+
+
+
+
+  <div id="ctchart">
+    <div id = "chart">    
+      
+    </div>
+    
+  </div>
+
+  
+
+  <div id = "ctindicator">
+   
+      <h2>Risk</h2>
+        <div id="indicator">
+          Level
+        </div>
+     
+  </div>
+  <hr />
+
+  <div id = "app">
+    <label for="name">Name:</label>
+    <input id="name" type="text" v-model="name" /> <!--v-model is doing the magic here-->
+    <p>{{ name }}</p>
+  </div>
+
+
+  
+</body> 
+
+
+</html>
